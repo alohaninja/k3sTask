@@ -85,9 +85,9 @@ class K3sCITask {
                 // const error_code = await exec.exec(formattedShell);
                 console.log(`About to run command ${command}`);
                 const k3scommands = taskLibrary.getInput("k3scommands", true);
-                let bashPath = taskLibrary.which("bash", true);
-                let bash = taskLibrary.tool(bashPath);
-                bash.arg(file);
+                let shellPath = taskLibrary.which(unformattedShell, true);
+                let shell = taskLibrary.tool(shellPath);
+                shell.arg(file);
                 let options = {
                     cwd: this.workingDirectory,
                     failOnStdErr: false,
@@ -95,7 +95,7 @@ class K3sCITask {
                     outStream: process.stdout,
                     ignoreReturnCode: true
                 };
-                let exitCode = yield bash.exec(options);
+                let exitCode = yield shell.exec(options);
                 if (exitCode != 0) {
                     taskLibrary.setResult(taskLibrary.TaskResult.Failed, `Exit code: ${exitCode}`);
                 }
