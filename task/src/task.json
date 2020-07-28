@@ -20,7 +20,7 @@
     "version": {
       "Major": "1",
       "Minor": "0",
-      "Patch": "7"
+      "Patch": "8"
     },
     "minimumAgentVersion": "2.115.0",
     "instanceNameFormat": "k3s CI",
