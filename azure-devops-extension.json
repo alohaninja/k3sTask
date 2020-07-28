@@ -1,0 +1,70 @@
+{
+    "manifestVersion": 1,
+    "id": "runk3sinci",
+    "publisher": "k3sCIPublisher",
+    "version": "1.0.24",
+    "name": "k3s CI Extension",
+    "description": "Azure Devops Pipelines Extension for AzDO k3s CI",
+    "galleryFlags": [
+        "Preview"
+    ],
+    "icons": {
+        "default": "static/extension-logo.png"
+      },
+      "demands": [
+        "api-version/3.0"
+      ],
+      "tags": [
+        "k3s",
+        "Release",
+        "Azure Pipelines",
+        "Visual Studio Extensions"
+      ],
+    "categories": [
+        "Azure Pipelines"
+    ],
+    "screenshots": [{
+        "path": "static/screenshot-1.png"
+      }],
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "files": [
+        {
+            "path": "static",
+            "addressable": true
+        },
+        {
+            "path": "task/src/task.json",
+            "packagePath": "tasks/k3sCI/task.json",
+            "addressable": true
+        },
+        {
+            "path": "task/src/execute-k3s-commands.js",
+            "packagePath": "tasks/k3sCI/execute-k3s-commands.js",
+            "addressable": true
+        },
+        {
+            "path": "static/task-icon.png",
+            "packagePath": "tasks/k3sCI/icon.png",
+            "addressable": true
+        },
+        {
+            "path": "task/node_modules",
+            "packagePath": "tasks/k3sCI/node_modules",
+            "addressable": true
+          }
+    ],
+    "contributions": [
+        {
+          "id": "k3sCI",
+          "type": "ms.vss-distributed-task.task",
+          "targets": ["ms.vss-distributed-task.tasks"],
+          "properties": {
+            "name": "tasks/k3sCI"
+          }
+        }
+      ]
+}
