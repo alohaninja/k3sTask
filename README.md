@@ -8,3 +8,7 @@ tfx extension init
 ```
 npm run build
 ```
+
+## TODO 
+- CI/CD publish from GH to VS Marketplace 
+- Add additional authors for Marketplace Publisher
