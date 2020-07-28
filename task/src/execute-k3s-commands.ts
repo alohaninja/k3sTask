@@ -94,10 +94,10 @@ export class K3sCITask {
 
         const k3scommands = taskLibrary.getInput("k3scommands", true);
 
-        let bashPath = taskLibrary.which("bash", true)
-        let bash = taskLibrary.tool(bashPath);
+        let shellPath = taskLibrary.which(unformattedShell, true)
+        let shell = taskLibrary.tool(shellPath);
 
-        bash.arg(file);
+        shell.arg(file);
         
         let options = <toolRunner.IExecOptions>{
             cwd: this.workingDirectory,
@@ -107,7 +107,7 @@ export class K3sCITask {
             ignoreReturnCode: true
         };
 
-        let exitCode: number = await bash.exec(options);
+        let exitCode: number = await shell.exec(options);
 
         if(exitCode != 0){
             taskLibrary.setResult(taskLibrary.TaskResult.Failed, `Exit code: ${exitCode}`);
