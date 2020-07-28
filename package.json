@@ -1,0 +1,36 @@
+{
+  "name": "runk3sinci",
+  "version": "1.0.0",
+  "description": "k3s CI Extension",
+  "keywords": [
+    "extensions",
+    "Azure DevOps",
+    "Visual Studio Team Services"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "scripts": {
+    "clean": "rimraf ./*.vsix",
+    "compile": "npm run clean && tsc -p task",
+    "build": "npm run compile && npm run install-task-lib",
+    "build:dev": "npm run compile:dev && npm run postbuild",
+    "postbuild": "npm run package-extension -- --rev-version",
+    "package-extension": "tfx extension create --manifests azure-devops-extension.json",
+    "publish-extension": "tfx extension publish --manifests azure-devops-extension.json",
+    "install-task-lib": "cd task && npm install"
+  },
+  "dependencies": {
+    "@types/node": "^14.0.26",
+    "azure-pipelines-task-lib": "^2.10.0"
+  },
+  "devDependencies": {
+    "rimraf": "~2.6.2",
+    "tfx-cli": "^0.6.3",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.11.0",
+    "typescript": "^2.6.1"
+  }
+}
