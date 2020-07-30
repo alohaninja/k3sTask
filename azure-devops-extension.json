@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "runk3sinci",
     "publisher": "k3sCIPublisher",
-    "version": "1.0.26",
+    "version": "1.0.27",
     "name": "k3s CI Extension",
     "description": "Azure Devops Pipelines Extension for AzDO k3s CI",
     "galleryFlags": [
@@ -34,6 +34,7 @@
     "files": [
         {
             "path": "README.md",
+            "packagePath": "tasks/k3sCI/README.md",
             "addressable": true
         },
         {
