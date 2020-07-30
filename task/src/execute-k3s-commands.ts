@@ -24,10 +24,15 @@ export class K3sCITask {
         powershell: 'powershell -command "& \'{0}\'"',
         };
 
-    linuxCommand = `echo "Downloading latest kubeci script..."
+    linuxCommand = `echo "Downloading latest kubeci linux script..."
         curl -sfL https://github.com/KnicKnic/temp-kubernetes-ci/releases/download/v1.0.0/linux.sh | sh -s `;
 
     linuxShell = 'bash';
+
+    winCommand = `echo "Downloading latest kubeci windows script..."
+    iex ((New-Object System.Net.WebClient).DownloadString('https://github.com/KnicKnic/temp-kubernetes-ci/releases/download/v1.0.0/windows.ps1'))`;
+
+    winShell = 'pwsh';
 
     uuidv4() {
         return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
@@ -67,14 +72,14 @@ export class K3sCITask {
         if(platform == 'linux'){
             command = this.linuxCommand
             unformattedShell = this.linuxShell
-        } else{
+        } else if (platform == 'win32'){
+            command = this.winCommand
+            unformattedShell = this.winShell
+        } 
+        else{
             taskLibrary.setResult(taskLibrary.TaskResult.Failed, "Unsupported os " + platform);
         }     
-        // else if (platform == 'win32'){
-        //     command = core.getInput('windows');
-        //     unformattedShell = core.getInput('windowsShell')
-        // }    
-
+           
         let fileExtension = this.fileExtensions[unformattedShell] || ''
         file = file+fileExtension
         fs.writeFileSync(file, command)
