@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "runk3sinci",
     "publisher": "k3sCIPublisher",
-    "version": "1.0.27",
+    "version": "1.0.28",
     "name": "k3s CI Extension",
     "description": "Azure Devops Pipelines Extension for AzDO k3s CI",
     "galleryFlags": [
@@ -26,6 +26,11 @@
     "screenshots": [{
         "path": "static/screenshot-1.png"
       }],
+    "content": {
+        "details": {
+            "path": "README.md"
+        }
+    },
     "targets": [
         {
             "id": "Microsoft.VisualStudio.Services"
@@ -34,7 +39,6 @@
     "files": [
         {
             "path": "README.md",
-            "packagePath": "tasks/k3sCI/README.md",
             "addressable": true
         },
         {
