@@ -33,6 +33,10 @@
     ],
     "files": [
         {
+            "path": "README.md",
+            "addressable": true
+        },
+        {
             "path": "static",
             "addressable": true
         },
