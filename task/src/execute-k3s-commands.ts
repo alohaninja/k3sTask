@@ -24,15 +24,8 @@ export class K3sCITask {
         powershell: 'powershell -command "& \'{0}\'"',
         };
 
-    linuxCommand = `echo "asfd"
-        curl -sfL https://get.k3s.io | sh -s - --docker
-        mkdir ~/.kube || echo "~/.kube already existed"
-        sudo cp /etc/rancher/k3s/k3s.yaml ~/.kube/config
-        sudo chmod 777 ~/.kube/config
-        # systemctl status k3s
-        # sleep 15
-        cat ~/.kube/config
-        kubectl get node`;
+    linuxCommand = `echo "Downloading latest kubeci script..."
+        curl -sfL https://github.com/KnicKnic/temp-kubernetes-ci/releases/download/v1.0.0/linux.sh" | sh -s `;
 
     linuxShell = 'bash';
 
