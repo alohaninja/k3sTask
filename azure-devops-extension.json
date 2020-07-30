@@ -5,6 +5,7 @@
     "version": "1.0.28",
     "name": "k3s CI Extension",
     "description": "Azure Devops Pipelines Extension for AzDO k3s CI",
+    "public": true,
     "galleryFlags": [
         "Preview"
     ],
