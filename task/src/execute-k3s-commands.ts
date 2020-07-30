@@ -25,7 +25,7 @@ export class K3sCITask {
         };
 
     linuxCommand = `echo "Downloading latest kubeci script..."
-        curl -sfL https://github.com/KnicKnic/temp-kubernetes-ci/releases/download/v1.0.0/linux.sh" | sh -s `;
+        curl -sfL https://github.com/KnicKnic/temp-kubernetes-ci/releases/download/v1.0.0/linux.sh | sh -s `;
 
     linuxShell = 'bash';
 
