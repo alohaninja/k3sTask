@@ -32,6 +32,10 @@
             "path": "README.md"
         }
     },
+    "repository": {
+      "type": "git",
+      "uri": "https://github.com/alohaninja/k3sTask"
+    },
     "targets": [
         {
             "id": "Microsoft.VisualStudio.Services"

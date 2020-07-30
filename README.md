@@ -8,7 +8,7 @@ Creates a k3s cross-platform cluster for CI testing.
 
 ## Configuration
 
-1. Install this extension to your project. 
+1. Install [this extension](https://aka.ms/k3stask) to your project ADO tenant. 
 
     ![k3s install](https://user-images.githubusercontent.com/26234626/88642384-44aa8b80-d075-11ea-8362-40ec9edc6c1e.png)
 
